@@ -1,4 +1,308 @@
 ## Project Documentation
+Post man publish link
+```
+https://documenter.getpostman.com/view/43059315/2sAYk8wPYR
+```
+
+open api documentation
+```yaml
+openapi: 3.0.0
+info:
+  title: news
+  version: 1.0.0
+servers:
+  - url: http://news.test
+components:
+  securitySchemes:
+    noauthAuth:
+      type: http
+      scheme: noauth
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /api/register:
+    post:
+      tags:
+        - default
+      summary: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: John1 2Doe
+                email: john21@example.com
+                password: password123
+                password_confirmation: password123
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/login:
+    post:
+      tags:
+        - default
+      summary: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: john1@example.com
+                password: password123
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/resetpasssword:
+    post:
+      tags:
+        - default
+      summary: reset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: bimax33971@payposs.com
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/resetpasssword-link:
+    post:
+      tags:
+        - default
+      summary: rest password link
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                password: '123456'
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: token
+          in: query
+          schema:
+            type: string
+          example: 050f98185851ec538d040f8007a106e9360953e485b5a266a75eff82502e1518
+        - name: email
+          in: query
+          schema:
+            type: string
+          example: bimax33971@payposs.com
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/fetch:
+    post:
+      tags:
+        - default
+      summary: fetch news
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                per_page: 10
+                page: 1
+                source: NY Times
+                start_date: '2025-01-01'
+                end_date: '2025-12-31'
+                category: arts
+                author: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/setPreferences:
+    post:
+      tags:
+        - default
+      summary: set prefrences
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                categories:
+                  - Technology
+                  - sports
+                  - arts
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/getPreferences:
+    post:
+      tags:
+        - default
+      summary: get ptrefrences
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/fetchuserArticles:
+    post:
+      tags:
+        - default
+      summary: get  user articles
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: ''
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/fetchone/eyJpdiI6IlJVMGpXVlBFYVNibTV4eWZsZ0tsUGc9PSIsInZhbHVlIjoiQjl4TlgzcUVueVRUaGlKYmhtU1pVZz09IiwibWFjIjoiOTdjMGYzNmUwMzAwY2VhNjU4MzgzNmE3YjM0YzVlOGVkMTE3ZTc2OTVkM2YyODg3NzU2YzYxMDZkYzYxNjFiYyIsInRhZyI6IiJ9:
+    get:
+      tags:
+        - default
+      summary: fetch news single
+      description: encrypted id of news is sended to fetch data
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+```
 
 ### Table of Contents
 1. Introduction
@@ -17,7 +321,7 @@ To set up the project locally, follow these steps:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-repo/news.git
+    git clone https://github.com/rohithkrish/news.git
     cd news
     ```
 
