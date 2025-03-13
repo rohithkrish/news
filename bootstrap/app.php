@@ -18,11 +18,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         //
     })
-    ->withSchedule(function (Schedule $schedule) {
-        $schedule->job(new FetchGuardianNewsJob() )->daily();
-         $schedule->job(new FetchBBCNewsJob() )->daily();
-         $schedule->job(new FetchNYTimesNewsJob() )->daily();
-    })
+    // ->withSchedule(function (Schedule $schedule) {
+    //     $schedule->job(new FetchGuardianNewsJob() )->daily();
+    //      $schedule->job(new FetchBBCNewsJob() )->daily();
+    //      $schedule->job(new FetchNYTimesNewsJob() )->daily();
+    // })
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
