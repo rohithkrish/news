@@ -433,5 +433,26 @@ The application provides several API endpoints for user authentication, fetching
 - **User Preference Articles:**
     - `POST /fetch-articles` - Fetch articles based on user preferences
 
+-- **Docker setup guide:**
+Step 1: Check if Docker Compose is Installed
+ -Run this command to check the installed version:
+```
+docker compose version
+```
+  Step 2: Install Docker Compose (For Ubuntu)
+ Since Docker now includes Compose by default, you just need to install Docker properly.
+ ```
+   sudo apt update
+   sudo apt install docker-compose-plugin 
+```
+then run docker
+```
+      docker compose up -d --build
+````
+project will be host on
+```
+http://localhost:8081/
+```
+
 ### Conclusion
 This documentation provides a basic overview of the Laravel news aggregation application. For more detailed information, refer to the Laravel documentation and the source code of the project.
