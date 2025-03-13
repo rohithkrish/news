@@ -3,7 +3,6 @@ Post man publish link
 ```
 https://documenter.getpostman.com/view/43059315/2sAYk8wPYR
 ```
-
 open api documentation
 ```yaml
 openapi: 3.0.0
