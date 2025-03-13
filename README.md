@@ -398,7 +398,10 @@ To run the scheduler, use the following command:
 ```bash
 php artisan schedule:work
 ```
-
+### sheduled command
+```
+news:fetch
+```
 ### Testing
 The application includes unit and feature tests to ensure the functionality works as expected.
 
